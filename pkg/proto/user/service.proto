@@ -1,0 +1,16 @@
+syntax ="proto3";
+package user;
+
+option go_package = "github.com/pvsnp9/teamup-grpc/pkg/protogen/go/user";
+
+message TestRequest {
+    string name = 1;
+}
+
+message TestResponse {
+    string greet = 1;
+}
+
+service TestService {
+    rpc TestService(TestRequest) returns (TestResponse){}
+}
