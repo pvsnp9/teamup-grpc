@@ -1,17 +1,11 @@
 syntax ="proto3";
 package user;
 
+import "pkg/proto/user/type/registration_type.proto";
+
 option go_package = "github.com/pvsnp9/teamup-grpc/pkg/protogen/go/user";
 
-message TestRequest {
-    string name = 1;
-    string email = 2;
-}
-
-message TestResponse {
-    string greet = 1;
-}
 
 service TestService {
-    rpc TestService(TestRequest) returns (TestResponse){}
+    rpc UserRegistration(RegistrationRequest) returns (RegistrationResponse){}
 }
